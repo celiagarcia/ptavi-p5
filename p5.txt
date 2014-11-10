@@ -124,7 +124,7 @@ No, porque la respuesta es un error, porque no se ha llevado acabo STUN.
 Cuando es correcto en la respuesta del registrar al cliente debe ser un 200OK
  
  ** ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)
-??????????????????????????????????????????????????????????????????????????
+ En el primer intento el tamañno es mayor que en el segundo, ya que en ese caso no envía la cabecera 'Proxy-Athorization'.
  
  
  ** ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades.
@@ -224,7 +224,6 @@ Porque el paquete 247 ha llegado muy tarde, se trata de un caso puntual, el cuea
  ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?
  
 No sería comparable ya que el valor de delta es mucho mayor que en el paquete anterior.
-????????????????????????????????????????????????????????????????????????????
  
  ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter?
  
@@ -286,13 +285,12 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 17. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
  ** ¿Es necesario el uso de DNS y STUN? ¿Por qué?
  
- 
 Si es necesario el uso de DNS, para obtener la IP de ekiga.
 No es necesario el uso de STUN. En el caso anterior usabamos HTTP para obtener la IP pública, pero en este caso al ser directamente IP pública usa directamente STUN, el cual devuelve la misma IP.
  
  ** ¿Son diferentes el registro y la descripción de la sesión?
  
-El registro (RESGISTER) es igual, sin embargo, la descripción (SIP/SDP) es diferente.
+El registro es igual (REGISTER), sin embargo, la descripción (SIP/SDP) es diferente porque el ancho de banda no es el mismo.
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
  ** ¿Cuántos flujos tenemos?
@@ -301,7 +299,7 @@ En este caso tenemos igualmente dos flujos, pero a diferencia de antes, cada flu
  
  ** ¿Cuál es su periodicidad?
  
-La peridocidad es 20 ms, ya que utiliza el mismo 
+La peridocidad es 20 ms, ya que utiliza el mismo protocolo.
  
  ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
  
